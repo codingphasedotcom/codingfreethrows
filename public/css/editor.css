@@ -1,0 +1,361 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  text-align: center;
+}
+
+textarea {
+  width: 32%;
+  float: top;
+  min-height: 250px;
+  overflow: scroll;
+  margin: auto;
+  display: inline-block;
+  background: #f4f4f9;
+  outline: none;
+  font-family: Courier, sans-serif;
+  font-size: 14px;
+}
+
+iframe {
+  bottom: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.editor-app {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 80px 34% 1fr;
+  grid-template-rows: 100% 33.33% 33.33%;
+  height: 100vh;
+  overflow: hidden;
+}
+.editor-app .editor-menu {
+  background: #313951; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #313951 0%,
+    #182038 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #313951 0%,
+    #182038 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #313951 0%,
+    #182038 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  height: 100%;
+  padding: 10px;
+}
+.editor-app .editor-menu .button {
+  background: #1f2133;
+  background: #6c6ee6; /* Old browsers */
+  background: -moz-linear-gradient(
+    45deg,
+    #1f2133 0%,
+    #1f2133 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    45deg,
+    #1f2133 0%,
+    #1f2133 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #1f2133 0%, #1f2133 100%);
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 3px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  border-left: 2px solid #6c6ee6;
+  margin: 0 0 20px;
+  transition: all 0.4s ease-in-out;
+}
+.editor-app .editor-menu .button.active,
+.editor-app .editor-menu .button:hover {
+  background: #6c6ee6; /* Old browsers */
+  background: -moz-linear-gradient(
+    45deg,
+    #6c6ee6 0%,
+    #5456d9 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    45deg,
+    #6c6ee6 0%,
+    #5456d9 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #6c6ee6 0%, #5456d9 100%);
+  text-transform: uppercase;
+  -webkit-box-shadow: 0px 8px 27px -7px rgba(108, 110, 230, 1);
+  -moz-box-shadow: 0px 8px 27px -7px rgba(108, 110, 230, 1);
+  box-shadow: 0px 8px 27px -7px rgba(108, 110, 230, 1);
+  margin: 0 0 20px;
+  transition: all 0.4s ease-in-out;
+}
+.editor-app .code {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100vh;
+  border-left: 1px solid #4b5676;
+  border-right: 1px solid #4b5676;
+  overflow: hidden;
+  position: relative;
+  background: #3f4860; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #3f4860 0%,
+    #19213d 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #3f4860 0%,
+    #19213d 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #3f4860 0%,
+    #19213d 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.editor-app .code .editor {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  border-bottom: 2px solid #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate3d(-100%, 0, 0);
+  transition: all 0.2s ease-in-out;
+}
+.editor-app .code .editor.active {
+  transform: translate3d(0, 0, 0);
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  border-bottom: 2px solid #fff;
+}
+.editor-app .code .ace-dracula {
+  background: #3f4860; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #3f4860 0%,
+    #19213d 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #3f4860 0%,
+    #19213d 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #3f4860 0%,
+    #19213d 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: #f8f8f2;
+}
+.ace-dracula .ace_marker-layer .ace_active-line {
+  background: #292947;
+}
+.ace-dracula .ace_gutter {
+  background: -moz-linear-gradient(
+    top,
+    #3f4860 0%,
+    #19213d 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #3f4860 0%,
+    #19213d 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #3f4860 0%,
+    #19213d 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: #57576e;
+}
+.ace-dracula .ace_gutter-active-line {
+  background-color: #272d44;
+}
+
+.ace_scroller {
+  margin-left: 0px;
+}
+.editor-app .results {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px;
+  background: #3b4257; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #3b4257 0%,
+    #1a223e 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #3b4257 0%,
+    #1a223e 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #3b4257 0%,
+    #1a223e 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.editor-app .window {
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: white;
+}
+
+input#compile {
+  margin-top: 5px;
+  float: right;
+}
+
+/*Language Select CSS */
+button.btn.dropdown-toggle.btn-default {
+  width: 42%;
+  margin: 4px 2px 6px 4px;
+}

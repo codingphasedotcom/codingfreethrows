@@ -1,0 +1,49 @@
+<html>
+    <head>
+      <title>Code Editor</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,300,400,500,600,700" rel="stylesheet">
+      <link rel="stylesheet" href="/css/editor.css">
+      <script type="text/javascript" src="https://ajaxorg.github.io/ace-builds/src-min-noconflict/ace.js"></script>
+    </head>
+
+    <body>
+      <div class="editor-app">
+        <div class="editor-menu">
+          <div class="button btn-html active">
+            HTMl
+          </div>
+          <div class="button btn-css">
+            CSS
+          </div>
+          <div class="button btn-js">
+            JS
+          </div>
+        </div>
+        <div class="code">
+          <pre name="htmlEditor" id="htmlEditor" class="editor active" style="border: none;">
+            <div class="box">swag</div>
+          </pre>
+          <pre name="cssEditor" id="cssEditor" class="editor" style="border: none;">
+            .box{
+              background: red;
+              width: 400px;
+              width: 400px;
+            }
+          </pre>
+          <pre name="jsEditor" id="jsEditor" class="editor" style="border: none;"></pre>
+        </div>
+        <div class="results">
+          <div class="window">
+            <iframe id="code"></iframe>
+          </div>
+
+        </div>
+      </div>
+      <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+      <script type="text/javascript" src="/js/app.js"></script>
+    </body>
+  </html>
