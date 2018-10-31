@@ -41,6 +41,43 @@ function compile() {
   )
   code.close()
 }
+////
+function logger() {
+  console.old = console.log
+  console.log = function() {
+    var output = '',
+      arg,
+      i
+
+    for (i = 0; i < arguments.length; i++) {
+      arg = arguments[i]
+      output += '<span class="log-' + typeof arg + '">'
+
+      if (
+        typeof arg === 'object' &&
+        typeof JSON === 'object' &&
+        typeof JSON.stringify === 'function'
+      ) {
+        output += JSON.stringify(arg)
+      } else {
+        output += arg
+      }
+
+      output += '</span>&nbsp;'
+    }
+
+    document.getElementById('terminal').innerHTML += output + '<br>'
+    console.old.apply(undefined, arguments)
+  }
+}
+
+// Testing
+console.log('Hi!', { a: 3, b: 6 }, 42, true)
+console.log('Multiple', 'arguments', 'here')
+console.log(null, undefined)
+// console.old("Eyy, that's the old and boring one.")
+
+////
 
 $(document).ready(() => {
   compile()
@@ -64,7 +101,15 @@ $(document).ready(() => {
         $('.code .editor').removeClass('active')
         $('#jsEditor').addClass('active')
         break
+      case 'button btn-console':
+        $('.editor-menu .button').removeClass('active')
+        $(this).addClass('active')
+        $('.code .editor').removeClass('active')
+        $('#terminal').toggleClass('active')
+        logger()
+        break
       default:
     }
   })
+  // $(document).on('click')
 })

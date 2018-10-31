@@ -156,7 +156,7 @@ iframe {
 .editor-app {
   height: 100%;
   display: grid;
-  grid-template-columns: 80px 34% 1fr;
+  grid-template-columns: 120px 34% 1fr;
   grid-template-rows: 100% 33.33% 33.33%;
   height: 100vh;
   overflow: hidden;
@@ -182,6 +182,9 @@ iframe {
   padding: 10px;
 }
 .editor-app .editor-menu .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #1f2133;
   background: #6c6ee6; /* Old browsers */
   background: -moz-linear-gradient(
@@ -205,6 +208,11 @@ iframe {
   border-left: 2px solid #6c6ee6;
   margin: 0 0 20px;
   transition: all 0.4s ease-in-out;
+}
+.editor-app .editor-menu .button .ti-layout-slider {
+  color: #3cd83c;
+  font-size: 1.2rem;
+  margin: 0 5px 0 0;
 }
 .editor-app .editor-menu .button.active,
 .editor-app .editor-menu .button:hover {
@@ -320,6 +328,7 @@ iframe {
   margin-left: 0px;
 }
 .editor-app .results {
+  position: relative;
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -347,6 +356,39 @@ iframe {
   width: 100%;
   overflow: hidden;
   background: white;
+}
+.editor-app #terminal {
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px;
+  background: #161b33;
+  width: 100%;
+  height: 300px;
+  text-align: left;
+  overflow: scroll;
+  /* flex-direction: column; */
+  position: absolute;
+  bottom: 0;
+  transform: translate3d(0, 400px, 0);
+  transition: all 0.4s ease-in-out;
+}
+.editor-app #terminal.active {
+  transform: translate3d(0, 0, 0);
+}
+.editor-app #terminal span {
+  /* display: flex; */
+  display: block;
+  width: 100%;
+}
+.log-boolean,
+.log-undefined {
+  color: magenta;
+}
+.log-object,
+.log-string {
+  color: white;
+}
+.log-number {
+  color: cyan;
 }
 
 input#compile {
